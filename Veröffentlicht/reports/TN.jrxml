@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="539" leftMargin="36" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6ca007a8-e4b8-4f97-9d25-9013503bbf38">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="177"/>
+	<parameter name="kans" class="java.lang.String"/>
+	<parameter name="firma" class="java.lang.String"/>
+	<parameter name="firmaline" class="java.lang.String"/>
+	<parameter name="vom" class="java.lang.String"/>
+	<parameter name="durch" class="java.lang.String"/>
+	<parameter name="Auftrag" class="java.lang.String"/>
+	<parameter name="guhrzeit" class="java.lang.String"/>
+	<parameter name="gpause" class="java.lang.String"/>
+	<parameter name="gfahrtkosten" class="java.lang.String"/>
+	<parameter name="nummer" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+
+
+     ORDERS."Auftrag" AS Auftrag,
+
+ T
+FROM
+     "APP"."TN" TN]]>
+	</queryString>
+	<field name="Auftrag" class="java.lang.String"/>
+	<field name="von" class="java.lang.String"/>
+	<field name="bis" class="java.lang.String"/>
+	<field name="pause" class="java.lang.String"/>
+	<field name="text" class="java.lang.String"/>
+	<field name="KuBudget" class="java.lang.String"/>
+	<field name="ArbPaket" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<image>
+				<reportElement uuid="be756e66-7037-4d39-8434-9171bbd9293c" x="0" y="2" width="348" height="54"/>
+				<imageExpression><![CDATA["abaslogo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="86" splitType="Stretch">
+			<textField>
+				<reportElement uuid="eb29e7e5-54f0-49ac-b426-dfb6fa728267" x="0" y="11" width="238" height="75"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{kans}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8992554c-5b99-46cd-b23b-40b23027ad25" x="0" y="2" width="259" height="9"/>
+				<textElement>
+					<font size="5" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firmaline}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="23a820e7-1347-47bf-81bb-9aef400c0a3d" x="0" y="0" width="172" height="28"/>
+				<textElement>
+					<font fontName="SansSerif" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tätigkeitsnachweis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6fdcfa34-0034-4df8-98a3-88790790bb4e" x="6" y="42" width="28" height="14"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[vom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="af491aae-e175-4c6b-b2d0-edf5ca80bb6c" x="6" y="56" width="38" height="14"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[durch]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="23269c12-861b-4e50-8edf-d819c0e90524" x="6" y="28" width="51" height="14"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+					<paragraph tabStopWidth="40"/>
+				</textElement>
+				<text><![CDATA[zu Auftrag]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="765c6354-bde4-4f6f-9417-01a4556fd44c" x="71" y="42" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{vom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="52574813-744d-4d13-be8b-a7cdca10bb19" x="71" y="56" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{durch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2c5ebf4b-c0c3-4e5d-8ae2-47a00df3a16f" x="71" y="28" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{Auftrag}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="79389dfb-052f-43b5-b45b-e3aa9bd0d93d" x="72" y="87" width="48" height="14"/>
+				<textElement/>
+				<text><![CDATA[Bis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e9896daf-620b-4d1d-ab35-ed67ddd14437" x="135" y="87" width="37" height="14"/>
+				<textElement/>
+				<text><![CDATA[Pause]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c1e0719a-2960-4866-ae50-562964c6f1d9" x="190" y="87" width="100" height="14"/>
+				<textElement/>
+				<text><![CDATA[Tätigkeit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="46f4c1a4-a7c2-424e-880e-ad71636d205b" x="0" y="87" width="57" height="14"/>
+				<textElement/>
+				<text><![CDATA[Von]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="177269dc-fa6b-4a44-8923-c88c0ea59ae9" x="184" y="28" width="36" height="14"/>
+				<textElement/>
+				<text><![CDATA[Uhrzeit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e82399e1-e810-4ce9-bc95-2d70e08c3bf4" x="184" y="42" width="36" height="14"/>
+				<textElement/>
+				<text><![CDATA[Pause]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ce683f74-38c6-4d20-9803-bd395ce2c037" x="184" y="56" width="54" height="14"/>
+				<textElement/>
+				<text><![CDATA[Fahrtkosten]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="dc09ebab-cc2e-4fc9-9a96-f43cb02d21a2" x="248" y="28" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{guhrzeit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4047ca08-8822-463b-92fc-65f7cf932db0" x="248" y="42" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{gpause}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="290e85b9-00a7-4e23-920f-96e4e10c3931" x="248" y="56" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{gfahrtkosten}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="4704383f-ea65-4451-88c4-50106376f821" x="0" y="103" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="bcaa8947-3b3e-4556-9030-5838be203339" x="184" y="0" width="371" height="28"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nummer}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<printWhenExpression><![CDATA[((!$F{KuBudget}.isEmpty())&&(!$F{ArbPaket}.isEmpty()))  ? Boolean.TRUE : Boolean.FALSE]]></printWhenExpression>
+			<textField>
+				<reportElement uuid="e5cf053d-c9b6-4373-9ddb-9b35b45e5757" x="0" y="0" width="57" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{von}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dd696359-7848-4a40-bf60-fd895c491e5b" x="72" y="0" width="48" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{bis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="56d2974f-314d-4906-bd38-307f7a26e61e" x="135" y="0" width="49" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{pause}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="7576cfde-ad5a-4620-85ec-0b855e1f5ac9" x="190" y="20" width="365" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{text}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="478409f0-3d3c-4766-801a-0dbb98ede29f" x="452" y="0" width="103" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ArbPaket}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2c7550e0-38e0-48bb-8a01-959837b6185a" x="190" y="0" width="69" height="20"/>
+				<textElement/>
+				<text><![CDATA[Budgetposition:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="68bf575d-db18-478b-99d1-ae1a3c0518ca" x="391" y="0" width="61" height="20"/>
+				<textElement/>
+				<text><![CDATA[Arbeitspaket:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="28bb9492-6ec0-440e-a09d-a98676ef89d0" x="259" y="0" width="98" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{KuBudget}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="43">
+			<printWhenExpression><![CDATA[(($F{KuBudget}.isEmpty())&& ($F{ArbPaket}.isEmpty())) ? Boolean.TRUE : Boolean.FALSE]]></printWhenExpression>
+			<textField>
+				<reportElement uuid="a9b82474-fd0f-4c29-8a35-623380dc6f0b" x="0" y="0" width="57" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{von}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5a16df0e-43df-40c2-a5f6-2df155c49c96" x="135" y="0" width="49" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{pause}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fee6e60c-60e4-418c-bd8c-e72e579eca3f" x="71" y="0" width="48" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{bis}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="ebc1b497-379a-4a84-ac82-b07310935870" x="190" y="0" width="365" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{text}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="36" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="beae5c70-e19e-47f7-9c08-f454b7cef44a" x="0" y="7" width="135" height="60"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[abas GmbH & Co.KG
+Gartenstr. 67
+76135 Karlsruhe
+Tel. +49 (0)721 967 24 03
+Fax +49 (0)721 967 24 48
+info@abas.de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="175b162c-c92f-4851-b82c-1962c11e57a1" x="269" y="7" width="142" height="60"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[Geschäftsführer:  Andreas Wolf, Günter Denz
+Sitz Karlsruhe, HRA40153, RG Mannheim
+persönlich haftender Gesellschafter:
+abas Verwaltungs GmbH
+Sitz Karlsruhe, HRB40226, RG Mannheim
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="4f6621c3-6bbf-434a-9ff1-e0cf79901c19" x="135" y="7" width="134" height="60"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firma}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="4d9edf75-277a-4a47-b3b3-f32eb467b473" x="411" y="7" width="144" height="60"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Sparkasse Karlsruhe
+BLZ 66050 101
+Kto.-Nr. 22733265
+IBAN: DE98 6605 0101 0022 7332 65
+SWIFT-BIX. KARSDE66
+Ust-ID-Nr. DE813770488]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="4c8c8643-9867-4e6d-a115-97b3857f9406" x="0" y="2" width="555" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="8" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="84"/>
+	<parameter name="kans" class="java.lang.String"/>
+	<parameter name="firma" class="java.lang.String"/>
+	<parameter name="firmaline" class="java.lang.String"/>
+	<parameter name="vom" class="java.lang.String"/>
+	<parameter name="durch" class="java.lang.String"/>
+	<parameter name="Auftrag" class="java.lang.String"/>
+	<parameter name="guhrzeit" class="java.lang.String"/>
+	<parameter name="gpause" class="java.lang.String"/>
+	<parameter name="gfahrtkosten" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+
+
+     ORDERS."Auftrag" AS Auftrag,
+
+ T
+FROM
+     "APP"."TN" TN]]>
+	</queryString>
+	<field name="Auftrag" class="java.lang.String"/>
+	<field name="von" class="java.lang.String"/>
+	<field name="bis" class="java.lang.String"/>
+	<field name="pause" class="java.lang.String"/>
+	<field name="text" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="86" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="11" width="238" height="75"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{kans}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="2" width="259" height="9"/>
+				<textElement>
+					<font size="5" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firmaline}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="105" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="172" height="28"/>
+				<textElement>
+					<font fontName="SansSerif" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tätigkeitsnachweis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="42" width="28" height="14"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[vom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="56" width="38" height="14"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[durch]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="28" width="51" height="14"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+					<paragraph tabStopWidth="40"/>
+				</textElement>
+				<text><![CDATA[zu Auftrag]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="71" y="42" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{vom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="56" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{durch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="28" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{Auftrag}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="72" y="87" width="48" height="14"/>
+				<textElement/>
+				<text><![CDATA[Bis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="87" width="37" height="14"/>
+				<textElement/>
+				<text><![CDATA[Pause]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="87" width="100" height="14"/>
+				<textElement/>
+				<text><![CDATA[Tätigkeit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="87" width="57" height="14"/>
+				<textElement/>
+				<text><![CDATA[Von]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="28" width="36" height="14"/>
+				<textElement/>
+				<text><![CDATA[Uhrzeit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="42" width="36" height="14"/>
+				<textElement/>
+				<text><![CDATA[Pause]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="56" width="54" height="14"/>
+				<textElement/>
+				<text><![CDATA[Fahrtkosten]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="248" y="28" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{guhrzeit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="248" y="42" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{gpause}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="248" y="56" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{gfahrtkosten}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="103" width="555" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="57" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{von}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="0" width="48" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{bis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="0" width="49" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{pause}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="190" y="0" width="365" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{text}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="36" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="7" width="135" height="60"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[ABAS Projektierung GmbH & Co.KG
+Kleinsteinbacher Str. 77
+76228 Karlsruhe
+Tel. +49 (0)721 967 24 03
+Fax +49 (0)721 967 24 48
+info@abas-projektierung.de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="7" width="142" height="60"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Geschäftsführer: Ursula Bracke,
+Michael Baier, Andreas Wolf
+Sitz Karlsruhe, HRA40153, RG Mannheim
+persönlich haftender Gesellschafter:
+ABAS Projektierung Verwaltungs GmbH
+Sitz Karlsruhe, HRB40226, RG Mannheim
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="135" y="7" width="134" height="60"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firma}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="411" y="7" width="144" height="60"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Sparkasse Karlsruhe
+BLZ 66050 101
+Kto.-Nr. 22733265
+IBAN: DE98 6605 0101 0022 7332 65
+SWIFT-BIX. KARSDE66
+Ust-ID-Nr. DE813770488]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="2" width="555" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="8" splitType="Stretch"/>
+	</summary>
+</jasperReport>

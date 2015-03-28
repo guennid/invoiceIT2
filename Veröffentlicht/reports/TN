@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     TN."ID" AS TN_ID,
+     TN."AUPOSID" AS TN_AUPOSID,
+     TN."DATUM" AS TN_DATUM,
+     TN."VON" AS TN_VON,
+     TN."BIS" AS TN_BIS,
+     TN."PAUSE" AS TN_PAUSE,
+     TN."FAHRTKOSTEN" AS TN_FAHRTKOSTEN,
+     TN."TEXT" AS TN_TEXT,
+     TN."KUNDE" AS TN_KUNDE,
+     TN."AUFTRAG" AS TN_AUFTRAG
+FROM
+     "APP"."TN" TN]]>
+	</queryString>
+	<field name="TN_ID" class="java.lang.Integer"/>
+	<field name="TN_AUPOSID" class="java.lang.String"/>
+	<field name="TN_DATUM" class="java.sql.Date"/>
+	<field name="TN_VON" class="java.sql.Time"/>
+	<field name="TN_BIS" class="java.sql.Time"/>
+	<field name="TN_PAUSE" class="java.sql.Time"/>
+	<field name="TN_FAHRTKOSTEN" class="java.lang.Integer"/>
+	<field name="TN_TEXT" class="java.lang.String"/>
+	<field name="TN_KUNDE" class="java.lang.String"/>
+	<field name="TN_AUFTRAG" class="java.lang.String"/>
+	<group name="TN_DATUM">
+		<groupExpression><![CDATA[$F{TN_DATUM}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

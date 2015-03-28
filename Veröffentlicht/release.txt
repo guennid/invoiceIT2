@@ -1,0 +1,120 @@
+1.38 - 08.02.15
+Bugfix:
+- Datenbankcrash bei Neuinstallation
+- Exit im Dateimenü funktionierte nicht
+- Übernachtungskenner wurde aus DB nicht ausgelesen und nicht angezeigt
+Features:
+- Neue Funktionen werden mit einem Releaseinfo Fenster beim ersten Start nach Update angezeigt.
+
+1.37 - 15.01.2015
+Features: 
+- Unter Hilfe->Wartungspasswort kann das abas Wartungspasswort Gefahrlos errechnet werden.
+- Unter Hilfe->Exchange Kalenderanalyse kann ein Exchangebug analysiert werden.
+  Bei einem Kalendereintrag mit leerem Betreff gibt es einen Fehler in invoiceIT, da die Exchange APi dies nciht unterstütz.
+  Mit Hilfe dieses Eintrages kann der Eintrag gefunden werden.
+- "Filosofie" des Tages nun in den Einstellungen abschaltbar
+- TN's mit neuen Firmierungen, Logo und Adressen versehen
+- Scollbalken horizontal und vertikal wenn Applikation verkleinert wird, damit auch 15 Zoller damit zurecht kommen.
+- Auf neues Framework umgestellt
+
+1.36  - unveröffentlicht
+Bug:
+- Wurde ein TN noch nicht gespeichert und dann ein anderer TN angeklickt so wurde der TN im Baum mit den neuen (falschen) Daten überschrieben 
+Features:
+- Neue Registerseite für Volltextsuche innerhalb des TN Archivs
+- Übernachtungshaken eingeführt.
+- TN Text nicht mehr scrollbar. Automtischer Zeilenvorschub wenn Ende der Zeile erreicht. Damit hat die Verwaltugn keine Endlosen Texte mehr zu formatieren.
+- Exchange Bug Überwachung. 
+- Bei Anklicken des TN Textes wird dieser automatisch in die Zwischenablage zur weiteren Verarbeitung kopiert.
+1.35 intern
+1.34  - 01.12.2012
+Bugfix: 
+- Es wurde nur noch ein TN übertragen pro Sync Vorgang.
+Features:
+- Das TN datum wird überwacht. Eintrag eines Datums in der Zukunft wird nun verhindert.
+- "Filosofie des Tages" nach jedem Sync.
+
+1.33  - 01.11.2012
+Bugfix:
+- Die Nettozeit wird im TN mit Nachkommastellen dargestellt. 
+- Die Summierung der TN zeiten eines Monats/Jahres erfolgte mit Gerundeten Nettozeiten. Daraus ergab sich immer ein falscher Wert. Nun werden die Nachkommawerte mitgerechnet.
+- 
+
+1.32  - 20.05.2012
+Bugfix:
+- Nicht konfigurierte Exchange Einstellungen führten zum Fehler, da trotzdem versucht wurde einen TN im Kalender zu erzeugen. Nicht konfigurierte Exchange Eisntellungen führen nun dazu, dass   dieser Programmbereich inaktiv ist.
+- CR und LF im Verwaltungstext führten zum Fehler beim TN Sync, da in abas nur ein einzeiliges Feld vorhanden.Dadurch wurde danna uch der Datensatz für alle anderen Syncs der User an diesem Tag     gesperrt.Beim Speichern eines TN wird nun der
+  Verwaltungstext nach CR und LF durchsucht und diese Zeichen entfernt.
+- Verbindungstest des Exchange Servers erweitert. Testweise werden nun kalenderdaten abgeholt.
+
+1.31  - 15.05.2012
+Features:
+- Exchange Connector implementiert. Hierfür wurden die Einstellungen erweitert. Es wird nun wenn konfiguriert ein TN beim Sync automatisch als Termin in den Kalender eingetragen. Der 
+  TN Text wird als Text des Termins übertragen. Auswählbar ob ein Kalendereintrag mittels Suchwortverknüpfung zum Kunden gesucht werden soll oder immer ein Eintrag neu angelegt werden soll.
+  Es wird nun auch der Exchangekalender	der letzten 100 Tage und der nächsten 50 Tage abgeholt und im neuen Register "Kalender" dargestellt. 	
+- Speichern eines TNs wird sofort im integrierten Kalender durch Grüne Färbung eines Termins markiert.(Verknüpft über Suchwort des Kunden). 
+- Auswahlfeld Firmenzugehörigkeit in Einstellungen aufgenommen. Über diese Einstellung wird der TN Druck gesteuert für die eSolutions und Nürnberg.=> 3 Jasper Reports im Auslieferungszustand
+- Kalenderauswahl (mit Kalenderansicht) für Komfort bei TN Erstellung
+- Zeit und Pausenauswahl mittels Comboboxen (Vielfacher Wunsch von den Zeitfeldern weg zu gehen, da diese im Umgang manchmal schwierig waren)
+- Auf vielfachen Wunsch werden nun die Zeiten für einen TN immer mit 08:00 - 17:00 vorbelegt. Bisher blieben die Vorher gewählten Zeiten stehen. Das führte zu einigen Falsch erfassten TN'S
+- Einstellungen Gruppiert und erweitert um "Baum expandieren beim Neustart"
+- Automatischer Updater: Beim Synchronisieren wird nun geprüft ob eine neue Funktion zur Verfügung steht und diese dann geladen und installiert.
+- Fehlerzustände in der Applikation werden angezeigt (Exceptions, sozusagen die Diags von Java)
+
+
+Bugfix: 
+- Umsätze wurden nur mit 1 Euro pro Stunde dargestellt, nun mit 120 Euro/h
+- Automatische Verbreiterung des Baums bei Verbreiterung des Fensters wieder hergestellt.
+- Rundungsfehler der Nettozeit bereinigt
+- Automatisches Expandieren des Baums führt nicht mehr dazu dass letzter Kundeneintrag komplett expandiert wird.
+- Wurde zwischen schon abgespeicherten TN's gewechselt, so wurde bisher die Nettozeit nicht neu errechnet.
+
+1.3 - Nicht veröffentlicht, da Testversion
+
+1.21 -10.04.2012
+Bugfix:
+- Verwaltungstext auf eine Zeile gekürzt, da in abas nur ein GL255 Vorhanden ist und mehrzeilige Infos zum absturz führten.
+- War ein Auftrag nicht mehr offen, konnte ein TN nicht mehr verändert werden. 
+- Darstellung der Nettozeit und  auf 2 Nachkommastellen begrenzt
+
+
+1.2 - 01.04.2012
+Features:
+- Auftragsknoten des Datenbaums wird bei Programmstart und nach Sync automatisch aufgeklappt.
+- TN und TN Archiv wird nun nach Datum sortiert dargestellt bei Start von invoiceIT. Neu erstellte TN's bei laufendem Programm werden jedoch immer ans Ende angehängt.
+- Tn Archiv wird nun mit Jahres und Monats Knoten dargestellt
+- Neue Felder für Grossprojekte:
+	Budgetposition und Arbeitspaket zum Bezug eines TN's auf die definierte Budgetbereiche oder Arbeitspakete.
+- Darstellung der noch zu übertragenden TN'S in der Statusleiste
+- Darstellung der im aktuellen Monat fakturierten Dienstleistung (Stunden und Umsatz) in der Statusleiste (ohne Fahrtkosten)
+- Darstellung der fakturierten Stunden und Umsätze im TN Archiv (ohne Fahrtkosten)
+
+
+Bugfix:
+- Englische Menüeinträge nun eingedeutscht ;-)
+- Kundenadresse im JasperAusdruck korrigiert. Plz steht nun richtigerweise vor dem Ort.
+
+
+
+1.1 - 18.03.2012
+Features:
+-Datenbanktabellen werden beim ersten Start erweitert auf Version neue Feldliste.
+-Datenbaum verbreitert
+-Dynamische Baum und Fensterbreite. Wird das InvoiceIT fenster verbreitert, so wird die Baumansicht verbreitert. Die restlichen Bereiche sind fix!
+-Auftrag im Datenbaum wird nun zusätzlich mit Betreff dargestellt
+-Mengeneinheit der Auftragsposition  wird nun abgeholt und dargestellt und in TN's mitgespeichert.
+
+Bugfix:
+- Ausdruck kann nun als PDF gespeichert werden
+- Bei Änderung des TN und Verwaltungstextes wird nun die Speichern Funktion freigegeben
+- TN Text Feld von 500 Zeichen auf 2000 in Datenbank vergrössert. 
+  Es wird nun auch die eingetragene Zeichenzahl bei Maximalanzahl abgefangen. 
+  Es können nicht mehr als 2000 Zeichen erfasst werden. 
+-Verwaltungstext wird nun geleert bei Klick auf neue Auftragsposition.
+
+
+
+1.0  - 01.03.2012
+Version für ersten Beta Test
+
+
